@@ -139,7 +139,7 @@ private[delta] class ConflictChecker(
   def checkConflicts(): CurrentTransactionInfo = {
     checkProtocolCompatibility()
     // checkNoMetadataUpdates()
-    // checkForAddedFilesThatShouldHaveBeenReadByCurrentTxn()
+    checkForAddedFilesThatShouldHaveBeenReadByCurrentTxn()
     checkForDeletedFilesAgainstCurrentTxnReadFiles()
     checkForDeletedFilesAgainstCurrentTxnDeletedFiles()
     checkForUpdatedApplicationTransactionIdsThatCurrentTxnDependsOn()
